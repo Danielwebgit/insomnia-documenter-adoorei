@@ -1,11 +1,15 @@
 FROM node:18-alpine AS build
 
-ARG user=DanielSystem&mpbet
-ARG uid=1000
+#ARG user=DanielSystem&mpbet
+#ARG uid=1001
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+#RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
+#RUN apk clean &&  rm -rf /var/lib/apt/lists/*
+
+#RUN useradd -G www-data,root -u $uid -d /home/$user $user
+
+RUN npm install -g npm@10.4.0
 
 WORKDIR /app
 COPY package*.json ./
